@@ -9,9 +9,9 @@ class UserDraftsRepository @Inject constructor(
     private val draftsDao: DraftsDao
 ) {
 
-//    fun getAllDraftsOfUser(userId: String): Flow<List<DraftEntity>> {
-//        return draftsDao.getUserAllDrafts(userId)
-//    }
+    fun getAllDraftsOfUserFlow(userId: String): Flow<List<DraftEntity>> {
+        return draftsDao.getUserAllDraftsFlow(userId)
+    }
 
     fun getAllDraftsOfUser(userId: String): List<DraftEntity> {
         return draftsDao.getUserAllDrafts(userId)

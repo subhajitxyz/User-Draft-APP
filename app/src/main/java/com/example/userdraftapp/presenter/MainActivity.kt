@@ -98,7 +98,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        viewmodel.loadUserDrafts()
 
 
 //        lifecycleScope.launch {
@@ -111,9 +110,19 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 
+//        lifecycleScope.launch {
+//            repeatOnLifecycle(Lifecycle.State.STARTED) {
+//                viewmodel.userDrafts.collect { it ->
+//                    // update adapter list
+//                    adapter.submitList(it)
+//
+//                }
+//            }
+//        }
+
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewmodel.userDrafts.collect { it ->
+                viewmodel.drafts.collect { it ->
                     // update adapter list
                     adapter.submitList(it)
 

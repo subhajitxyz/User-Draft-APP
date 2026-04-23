@@ -15,6 +15,9 @@ interface DraftsDao {
     @Query("SELECT * FROM drafts_table WHERE userId = :userId")
     fun getUserAllDrafts(userId: String): List<DraftEntity>
 
+    @Query("SELECT * FROM drafts_table WHERE userId = :userId")
+    fun getUserAllDraftsFlow(userId: String): Flow<List<DraftEntity>>
+
     @Query("SELECT * FROM drafts_table WHERE draftId = :draftId")
     fun getDraft(draftId: Int): DraftEntity
 
