@@ -81,6 +81,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
         val spinneradapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, usernameList)
         spinneradapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.usersSpinner.adapter = spinneradapter
@@ -96,6 +97,8 @@ class MainActivity : AppCompatActivity() {
                 // Optional: code to handle cases where nothing is selected
             }
         }
+
+        viewmodel.loadUserDrafts()
 
 
 //        lifecycleScope.launch {
